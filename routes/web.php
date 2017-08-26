@@ -16,6 +16,12 @@ Route::get('/', function () {
 });
 
 
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return view('admin.core');
+    });
+});
+
 Route::group(['prefix' => 'lang'], function () {
 
     Route::get('/', ['as' => 'app.languages.index', 'uses' => 'MBLanguageCodesController@index']);
