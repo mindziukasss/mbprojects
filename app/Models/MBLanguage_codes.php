@@ -4,7 +4,9 @@
 namespace App\Models;
 
 
-class MBLanguage_codes extends CoreModel
+use Illuminate\Database\Eloquent\Model;
+
+class MBLanguage_codes extends Model
 {
     public $incrementing = false;
     public $updated_at = false;
@@ -18,7 +20,7 @@ class MBLanguage_codes extends CoreModel
      * Fillable column names
      * @var array
      */
-    protected $fillable = ['language_code', 'name', 'is_active'];
+    protected $fillable = ['id','language_code', 'name', 'is_active'];
 
     public $timestamps = false;
 }
