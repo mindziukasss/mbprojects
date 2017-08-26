@@ -15,6 +15,7 @@ class CreateMbLanguageCodesTable extends Migration {
 		Schema::create('mb_language_codes', function(Blueprint $table)
 		{
 			$table->integer('count', true);
+            $table->string('id', 36)->unique('id_UNIQUE');
 			$table->string('language_code', 3)->unique('language_code_UNIQUE');
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('name', 50);
