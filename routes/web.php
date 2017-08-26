@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['prefix' => 'lang'], function () {
+
+    Route::get('/', ['as' => 'app.languages.index', 'uses' => 'MBLanguageCodesController@index']);
+
+    Route::group(['prefix' => '{id}'], function () {
+        Route::get('/edit', ['as' => 'app.languages.edit', 'uses' => 'MBLanguageCodesController@edit']);
+        Route::post('/edit', ['uses' => 'MBLanguageCodesController@update']);
+
+    });
+
+});
