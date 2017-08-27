@@ -16,4 +16,9 @@ class MBWorks_translations extends CoreModel
      * @var array
      */
     protected $fillable = ['id', 'record_id', 'language_code', 'title', 'description'];
+
+    public function work ()
+    {
+        return $this->hasOne(MBWorks::class,'id' , 'record_id');
+    }
 }
