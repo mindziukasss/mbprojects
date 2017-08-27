@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
 
-use App\Models\MBLanguage_codes;
+
 use App\Models\MBWorks;
 use App\Models\MBWorks_translations;
+use App\Models\MBWorksResourcesConnections;
 use Illuminate\Routing\Controller;
 
 class MBWorksController extends Controller {
@@ -23,6 +24,7 @@ class MBWorksController extends Controller {
         $config['edit'] = 'app.works.edit';
         $config['delete'] = 'app.works.destroy';
         $config['show'] = 'app.works.show';
+        $config['resource'] = 'app.resources.create';
         return view('admin.adminList',$config);
 	}
 
@@ -127,6 +129,7 @@ class MBWorksController extends Controller {
 	{
         MBWorks_translations::destroy(MBWorks_translations::where('record_id', $id)
                             ->pluck('id')->toArray());
+        MBWorksResourcesConnections::where('work_id', $id)->delete();
         MBWorks::destroy($id);
         return ["success" => true, "id" => $id];
 	}
