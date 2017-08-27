@@ -9,7 +9,6 @@
                 <a class="btn btn-success" href="{{route($create)}}">{{ trans('app.newRecord') }}</a>
         </div>
         @endif
-
         @if(sizeof($list)>0)
             <table class="table table-condensed">
                 <thead>
@@ -61,6 +60,12 @@
                                     <td align="center"><img src="{{ $value['path'] }}" height="25" width="30"></td>
                                 @else
                                     <td align="center">Nofoto</td>
+                                @endif
+                            @elseif($key == 'resources_conn')
+                                @if(isset($value) > null)
+                                    <td align="center">{{count($value)}}</td>
+                                @else
+                                    <td align="center">0</td>
                                 @endif
                             @else
                                 @if(!in_array($key, $ignore))

@@ -23,4 +23,11 @@ class MBWorksResourcesConnections extends Model
      * @var array
      */
     protected $fillable = ['resource_id', 'work_id'];
+
+    public function files()
+    {
+        return $this->hasMany(MBResources::class,'id', 'resource_id');
+    }
+
+
 }
