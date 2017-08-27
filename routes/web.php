@@ -34,6 +34,12 @@ Route::group(['prefix' => 'lang'], function () {
 
 });
 
+Route::group(['prefix' => 'resources'], function () {
+    Route::get('/create/{MBWorks}', ['as' => 'app.resources.create', 'uses' => 'MBResourcesController@create']);
+    Route::post('/create/{MBWorks}', ['uses' => 'MBResourcesController@store']);
+    Route::delete('/delete/{MBWorks}', ['as' => 'app.resources.destroy', 'uses' => 'MBResourcesController@destroy']);
+});
+
 Route::group(['prefix' => 'works'], function () {
     Route::get('/', ['as' => 'app.works.index', 'uses' => 'MBWorksController@index']);
     Route::get('/create', ['as' => 'app.works.create', 'uses' => 'MBWorksController@create']);
