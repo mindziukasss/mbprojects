@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\MBLanguage_codes;
 use App\Models\MBWorks;
+use App\Models\MBWorks_translations;
 use Illuminate\Routing\Controller;
 
 class MBWorksController extends Controller {
@@ -21,7 +23,6 @@ class MBWorksController extends Controller {
         $config['edit'] = 'app.works.edit';
         $config['delete'] = 'app.works.destroy';
         $config['show'] = 'app.works.show';
-        dd($config);
         return view('admin.adminList',$config);
 	}
 
@@ -33,7 +34,11 @@ class MBWorksController extends Controller {
 	 */
 	public function create()
 	{
-		//
+	    $config['lang'] = getActiveLanguages();
+	    $config['titleForm'] = 'Create projects';
+        $config['route'] = route('app.works.create');
+        $config['back'] = '/works';
+		return view('admin.createWorks', $config);
 	}
 
 	/**
@@ -44,7 +49,12 @@ class MBWorksController extends Controller {
 	 */
 	public function store()
 	{
-		//
+        $data = request()->all();
+        $record = MBWorks::create($data);
+        $data['record_id'] = $record->id;
+        MBWorks_translations::create($data);
+
+        return redirect(route('app.works.index'));
 	}
 
 	/**
@@ -56,7 +66,13 @@ class MBWorksController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $data = MBWorks::find($id)->toArray();
+        $config['title'] = $data['translation']['title'];
+        $config['description'] = $data['translation']['description'];
+        $config['url'] = $data['url'];
+        $config['edit'] = route('app.works.edit', $id);
+        $config['back'] = route('app.works.index');
+        return view('admin.showWorks', $config);
 	}
 
 	/**
@@ -68,7 +84,15 @@ class MBWorksController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+        $record = MBWorks::find($id)->toArray();
+        $record['title'] = $record['translation']['title'];
+        $record['description'] = $record['translation']['description'];
+        $record['language_code'] = $record['translation']['language_code'];
+        $config['record'] = $record;
+        $config['titleForm'] = 'Edit projects';
+        $config['route'] = route('app.works.edit', $id);
+        $config['back'] = route('app.works.index');
+        return view('admin.createWorks', $config);
 	}
 
 	/**
@@ -79,8 +103,17 @@ class MBWorksController extends Controller {
 	 * @return Response
 	 */
 	public function update($id)
-	{
-		//
+	{   $data = request()->all();
+
+        $record = MBWorks::find($id);
+        $record->update($data);
+        $data['record_id'] = $id;
+        MBWorks_translations::updateOrCreate([
+            'record_id' => $id,
+            'language_code' => $data['language_code']
+        ], $data);
+        return redirect(route('app.works.index'));
+
 	}
 
 	/**
@@ -92,7 +125,10 @@ class MBWorksController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        MBWorks_translations::destroy(MBWorks_translations::where('record_id', $id)
+                            ->pluck('id')->toArray());
+        MBWorks::destroy($id);
+        return ["success" => true, "id" => $id];
 	}
 
 }
