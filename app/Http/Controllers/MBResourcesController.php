@@ -33,7 +33,11 @@ class MBResourcesController extends Controller
      */
     public function index()
     {
-        //
+        $config['tableName'] = 'Resources list';
+        $config['ignore'] = ['id', 'count', 'created_at', 'updated_at', 'deleted_at'];
+        $config['list'] = MBResources::get()->toArray();
+        $config['delete'] = 'app.resources.destroy';
+        return view('admin.adminList',$config);
     }
 
     /**
@@ -120,14 +124,12 @@ class MBResourcesController extends Controller
      */
     public function destroy($id)
     {
-        if (MBResources::destroy($id) and MBWorksResourcesConnections::where('resource_id', $id)->delete())
-        {
+        MBResources::destroy($id);
+
+        MBWorksResourcesConnections::where('resource_id', $id)->delete();
+
             return json_encode(["success" => true, "id" => $id]);
 
-        }elseif(MBResources::destroy($id))
-        {
-            return json_encode(["success" => true, "id" => $id]);
-        }
     }
 
 }
