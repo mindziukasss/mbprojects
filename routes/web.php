@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -51,4 +51,9 @@ Route::group(['prefix' => 'works'], function () {
         Route::post('/edit', ['uses' => 'MBWorksController@update']);
         Route::delete('/delete', ['as' => 'app.works.destroy', 'uses' => 'MBWorksController@destroy']);
     });
+});
+
+
+Route::group(['prefix' => '{language?}', 'middleware' => 'check-language'], function () {
+    Route::get('/', ['as'=> 'app.frontend.index', 'uses'  => 'FrontendController@index']);
 });
