@@ -16,4 +16,10 @@ return [
 
     'translation' => 'Vertimas',
 
+
+    //////////////////////////
+    //Front-en/////
+
+    'about' => 'Apie mane',
+
 ];
