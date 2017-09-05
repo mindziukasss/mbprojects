@@ -23,5 +23,7 @@ return [
     'about' => 'Apie mane',
     'contact' => 'Kontaktai',
     'portfolio' => 'Darbai',
+    'you can view all my recent work on this site' => 'Galite peržiūrėti visus mano naujausius darbus šioje svetainėje',
+    'welcome to my portfolio site' => 'Sveiki atvykę į mano svetainę'
 
 ];

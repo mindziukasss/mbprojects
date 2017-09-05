@@ -16,7 +16,7 @@ class FrontendController extends Controller
     public function index()
     {
 
-        return view('Frontend.onepage');
+        return view('Frontend.info');
     }
 
     /**
