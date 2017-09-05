@@ -21,5 +21,7 @@ return [
     //Front-en/////
 
     'about' => 'Apie mane',
+    'contact' => 'Kontaktai',
+    'portfolio' => 'Darbai',
 
 ];

@@ -16,7 +16,7 @@ class CheckLanguage
     public function handle($request, Closure $next)
     {
         $language = request()->segment(1);
-        if (in_array($language, ['en', 'lt']))
+        if (in_array($language, ['lt', 'en']))
         {
             app()->setLocale($language);
             return $next($request);
