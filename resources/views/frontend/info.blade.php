@@ -16,7 +16,21 @@
         </div>
         <div id="skills">
             <h1>{{trans('app.skills')}}</h1>
-            <p></p>
+            <img class="logo" src="../image/apache-and-nginx.jpg">
+            <img class="logo" src="../image/bootstrap.jpg">
+            <img class="logo" src="../image/c_cplus.png">
+            <img class="logo" src="../image/django-logo.png">
+            <img class="logo" src="../image/html-css-js.png">
+            <img class="logo" src="../image/jquery.png">
+            <img class="logo" src="../image/prestashop.png">
+            <img class="logo" src="../image/rsz_angular.png">
+            <img class="logo" src="../image/rsz_laravel.png">
+            <img class="logo" src="../image/rsz_mysql.png">
+            <img class="logo" src="../image/rsz_nodejs.png">
+            <img class="logo" src="../image/rsz_php.png">
+            <img class="logo" src="../image/rsz_sass.png">
+            <img class="logo" src="../image/rsz_wordpress.png">
+            <img class="logo" src="../image/ruby_on_rails.png">
         </div>
     </div>
 

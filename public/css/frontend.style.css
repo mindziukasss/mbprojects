@@ -1,5 +1,5 @@
 #list {
-    background-color: #ccc;
+    background-color: #f9f5f5;
     background-size: cover;
     height: 100%;
     font-family: 'EB Garamond', serif;
@@ -41,8 +41,8 @@
 }
 
 #about {
-    background: #f9f5f5;
-    height: 300px;
+    background: white;
+    height: 345px;
     width: 50%;
     float: left;
     margin-left: -35px;
@@ -55,8 +55,8 @@
 }
 
 #skills {
-    background: #f9f5f5;
-    height: 300px;
+    background: white;
+    height: 345px;
     width: 50%;
     float: right;
     border-radius: 10px;
@@ -65,6 +65,9 @@
     box-shadow: 5px 5px 10px #666;
     color: #777;
     text-align: center;
+}
+.logo {
+    width: 16%;
 }
 
 
