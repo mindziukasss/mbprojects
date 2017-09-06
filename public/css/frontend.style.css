@@ -1,12 +1,11 @@
-/*body {*/
-    /*background: url('/image/page.jpg')no-repeat;*/
-    /*background-size: cover;*/
-    /*height: 100%;*/
-    /*font-family: 'Quicksand', sans-serif;*/
-/*}*/
-
-#jumb{
-    background-image: url('/image/page3.jpg');
+#list{
+background-color:#A9A9A9;
+background-size: cover;
+height: 100%;
+font-family: 'Quicksand', sans-serif;
+}
+#jumb {
+    background-image: url('../image/page3.jpg');
     background-size: cover;
     margin-top: -230px;
     height: 700px;
@@ -15,6 +14,27 @@
     opacity: 0.9;
 }
 
-#text{
-margin-top: 300px;
+#text {
+    margin-top: 300px;
+    text-shadow: 2px 2px 4px #000000
 }
+
+.slide {
+    animation-duration: 3s;
+    animation-name: sliden;
+    text-align: center;
+    font-size: 100px;
+
+}
+
+@keyframes sliden {
+    from {
+        margin-left: 100%;
+        width: 100%;
+    }
+    to {
+        /*margin-top: 0%;*/
+        width: 100%;
+    }
+}
+
