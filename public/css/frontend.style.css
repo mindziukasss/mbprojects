@@ -1,9 +1,11 @@
-#list{
-background-color:#A9A9A9;
-background-size: cover;
-height: 100%;
-font-family: 'Quicksand', sans-serif;
+#list {
+    background-color: #ccc;
+    background-size: cover;
+    height: 100%;
+    font-family: 'EB Garamond', serif;
+    font-size: 25px;
 }
+
 #jumb {
     background-image: url('../image/page3.jpg');
     background-size: cover;
@@ -37,4 +39,32 @@ font-family: 'Quicksand', sans-serif;
         width: 100%;
     }
 }
+
+#about {
+    background: #f9f5f5;
+    height: 300px;
+    width: 50%;
+    float: left;
+    margin-left: -35px;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 20px #666;
+    -moz-box-shadow: 5px 5px 20px #666;
+    box-shadow: 5px 5px 20px #666;
+    color: #777;
+    text-align: center;
+}
+
+#skills {
+    background: #f9f5f5;
+    height: 300px;
+    width: 50%;
+    float: right;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 10px #666;
+    -moz-box-shadow: 5px 5px 10px #666;
+    box-shadow: 5px 5px 10px #666;
+    color: #777;
+    text-align: center;
+}
+
 
