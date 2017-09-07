@@ -7,17 +7,21 @@
 }
 
 #jumb {
-    background-image: url('../image/page3.jpg');
-    background-size: cover;
-    margin-top: -230px;
-    height: 700px;
-    padding-top: 180px;
-    color: white;
-    opacity: 0.9;
+    background-color: #4686a0;
+    color: rgba(255, 255, 255, 0.75);
+    background-attachment: fixed,	fixed,	fixed;
+    background-image: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
+    background-position: top left,	center center,	center center;
+    background-size: auto,	cover,	cover;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 600px;
 }
 
 #text {
-    margin-top: 300px;
+    margin-top: 150px;
     text-shadow: 2px 2px 4px #000000
 }
 
@@ -41,6 +45,35 @@
 }
 
 #about {
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 20px #666;
+    -moz-box-shadow: 5px 5px 20px #666;
+    box-shadow: 5px 5px 20px #666;
+    color: #777;
+    text-align: center;
+    height: 354px;
+}
+
+#skills {
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 10px #666;
+    -moz-box-shadow: 5px 5px 10px #666;
+    box-shadow: 5px 5px 10px #666;
+    color: #777;
+    text-align: center;
+}
+.logo {
+    width: 16%;
+}
+
+#port_title{
+    margin-top: 30px;
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.work {
     background: white;
     height: 345px;
     width: 50%;
@@ -53,21 +86,14 @@
     color: #777;
     text-align: center;
 }
+.more{
+    margin-left: 270px;
+}
 
-#skills {
-    background: white;
-    height: 345px;
-    width: 50%;
-    float: right;
-    border-radius: 10px;
-    -webkit-box-shadow: 5px 5px 10px #666;
-    -moz-box-shadow: 5px 5px 10px #666;
-    box-shadow: 5px 5px 10px #666;
+#box {
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 20px #666;
+    -moz-box-shadow: 5px 5px 20px #666;
+    box-shadow: 5px 5px 20px #666;
     color: #777;
-    text-align: center;
 }
-.logo {
-    width: 16%;
-}
-
-
