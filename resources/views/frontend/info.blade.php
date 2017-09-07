@@ -15,7 +15,6 @@
                         <h3>{{trans('app.I am Mindaugas - a developer from Lithuania.')}}</h3>
                         <p>{{trans('app.I like to create different websites, programs and more.Thoroughness
 , consistency and perseverance are just a few features that allow you to succeed in various projects and more.')}}</p>
-                        {{--</div>--}}
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-4">
@@ -79,7 +78,38 @@
         </div>
         <div class="container">
             <div class="row">
+                <h1 id="port_title">{{trans('app.contact')}}</h1>
+                <div class="col-lg-6 col-md-4">
+                    <div class="thumbnail" id="about">
+                        <h1>Mindaugas Bernotas</h1>
+                        <h3>Vilnius, LT</h3>
+                        <h3>mindaugasbernotas2@gmail.com</h3>
+                        <h3>8-609-35011</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-4">
+                    <div class="thumbnail" id="about">
+                        <div class="form-area">
+                            <form role="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                                </div>
 
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                                    <span class="help-block"><p id="characterLeft" class="help-block "></p></span>
+                                </div>
+                                <button type="button" id="submit" name="submit" class="btn btn-primary pull-left">Send message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
