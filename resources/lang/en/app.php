@@ -11,5 +11,10 @@ return [
 , consistency and perseverance are just a few features that allow you to succeed in various projects and more." => "I like to create different websites, programs and more.Thoroughness
 , consistency and perseverance are just a few features that allow you to succeed in various projects and more.",
     "more" => "More",
-    "All Rights Reserved" => "All Rights Reserved "
+    "All Rights Reserved" => "All Rights Reserved ",
+    'name' => 'Name',
+    'email' => 'Email',
+    'subject' => 'Subject',
+    'message' => 'Message',
+    'send message' => 'Send Message',
     ];

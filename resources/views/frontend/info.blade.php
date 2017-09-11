@@ -89,23 +89,23 @@
                 </div>
                 <div class="col-lg-6 col-md-4">
                     <div class="thumbnail" id="about">
-                        <div class="form-area">
+                        <div class="form-area" id="form_size">
                             <form role="form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                                <div class="form-group" >
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="{{trans('app.name')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="{{trans('app.email')}}" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="{{trans('app.subject')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                                    <textarea class="form-control" type="textarea" id="message" placeholder="{{trans('app.message')}}" maxlength="140" rows="5"></textarea>
                                     <span class="help-block"><p id="characterLeft" class="help-block "></p></span>
                                 </div>
-                                <button type="button" id="submit" name="submit" class="btn btn-primary pull-left">Send message</button>
+                                <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">{{trans('app.send message')}}</button>
                             </form>
                         </div>
                     </div>

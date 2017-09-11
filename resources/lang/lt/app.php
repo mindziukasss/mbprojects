@@ -31,5 +31,11 @@ return [
 , consistency and perseverance are just a few features that allow you to succeed in various projects and more.'=> 'Man patinka kurti skirtingas interneto svetaines, programas ir ne tik. Kruopštumas, nuoseklumas ir atkaklumas yra tik kelios savybės leidžiančios sėkmingai atlikti įvairius projektus ir ne tik.',
     'more' => 'Plačiau',
     'All Rights Reserved' => 'Visos teisės saugomos ',
+    'name' => 'Vardas',
+    'email' => 'E-paštas',
+    'subject' => 'Antraštė',
+    'message' => 'Žinutė',
+    'send message' => 'Siusti žinutę'
+
 
 ];
