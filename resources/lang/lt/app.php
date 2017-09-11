@@ -35,7 +35,8 @@ return [
     'email' => 'E-paštas',
     'subject' => 'Antraštė',
     'message' => 'Žinutė',
-    'send message' => 'Siusti žinutę'
+    'send message' => 'Siusti žinutę',
+    'Download cv' => 'Atsisiųti cv'
 
 
 ];

@@ -15,6 +15,7 @@
                         <h3>{{trans('app.I am Mindaugas - a developer from Lithuania.')}}</h3>
                         <p>{{trans('app.I like to create different websites, programs and more.Thoroughness
 , consistency and perseverance are just a few features that allow you to succeed in various projects and more.')}}</p>
+                        <a href="../document/MBernotasEN.pdf" download>{{trans('app.Download cv')}}.</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-4">

@@ -17,4 +17,5 @@ return [
     'subject' => 'Subject',
     'message' => 'Message',
     'send message' => 'Send Message',
+    'Download cv' => 'Download cv',
     ];
