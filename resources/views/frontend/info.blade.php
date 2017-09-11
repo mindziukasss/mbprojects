@@ -85,6 +85,8 @@
                         <h3>Vilnius, LT</h3>
                         <h3>mindaugasbernotas2@gmail.com</h3>
                         <h3>8-609-35011</h3>
+                        <a href="https://github.com/mindziukasss" target="blank"><i class="fa fa-github link_logo" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/mindaugas.bernotas.90?fref=ts" target="blank"><i class="fa fa-facebook link_logo" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-4">
