@@ -54,7 +54,7 @@ Route::group(['prefix' => 'works'], function () {
 });
 
 
-Route::get('contact', 'FrontendController@getContact');
+
 Route::post('contact','FrontendController@postContact');
 
 Route::group(['prefix' => '{language?}', 'middleware' => 'check-language'], function () {

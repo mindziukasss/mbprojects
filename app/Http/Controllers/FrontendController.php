@@ -97,10 +97,6 @@ class FrontendController extends Controller
         //
     }
 
-    public function getContact()
-    {
-        return view('frontend.contact');
-    }
     public function postContact(Request $request)
 
     {
