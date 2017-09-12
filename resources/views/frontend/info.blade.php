@@ -86,30 +86,41 @@
                         <h3>Vilnius, LT</h3>
                         <h3>mindaugasbernotas2@gmail.com</h3>
                         <h3>8-609-35011</h3>
-                        <a href="https://github.com/mindziukasss" target="blank"><i class="fa fa-github link_logo" aria-hidden="true"></i></a>
-                        <a href="https://www.facebook.com/mindaugas.bernotas.90?fref=ts" target="blank"><i class="fa fa-facebook link_logo" aria-hidden="true"></i></a>
+                        <a href="https://github.com/mindziukasss" target="blank"><i class="fa fa-github link_logo"
+                                                                                    aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/mindaugas.bernotas.90?fref=ts" target="blank"><i
+                                    class="fa fa-facebook link_logo" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-4">
                     <div class="thumbnail" id="about">
                         <div class="form-area" id="form_size">
-                            <form role="form">
-                                <div class="form-group" >
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="{{trans('app.name')}}" required>
+
+                            <form action="{{url('contact')}}" method="POST" id="contact">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name"
+                                           placeholder="{{trans('app.name')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="{{trans('app.email')}}" required>
+                                    <input type="text" class="form-control" id="email" name="email"
+                                           placeholder="{{trans('app.email')}}" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="{{trans('app.subject')}}" required>
+                                    <input type="text" class="form-control" id="subject" name="subject"
+                                           placeholder="{{trans('app.subject')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" type="textarea" id="message" placeholder="{{trans('app.message')}}" maxlength="140" rows="5"></textarea>
+                                    <textarea class="form-control" type="textarea" name="text" id="message"
+                                              placeholder="{{trans('app.message')}}" maxlength="150"
+                                              rows="5"></textarea>
                                     <span class="help-block"><p id="characterLeft" class="help-block "></p></span>
                                 </div>
-                                <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">{{trans('app.send message')}}</button>
+                                <button type="submit" name="submit"
+                                        class="btn btn-primary pull-right">{{trans('app.send message')}}</button>
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -117,4 +128,42 @@
         </div>
     </div>
 
+@endsection
+
+@section('scripts')
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+//        $(document).ready(function () {
+//            $('#submit').click(function () {
+//                event.preventDefault();
+//                $.ajax({
+//                    type: 'POST',
+////                    url: '{language?}/contact',
+//                    url:'/contact',
+//                    data: $('#contact').serialize(),
+//                    beforeSend: function (xhr) {
+//                        $('#submit').html('SENDING....');
+//                    },
+//                    success: function (response) {
+//                        console.log('alio');
+//                    },
+//                    error: function () {
+//
+//                    },
+//                    complete: function () {
+//                        $('#submit').html('SEND MESSAGE.');
+//                    }
+//                });
+//            });
+//        });
+//        $('form.contact').on('#submit', function(){
+//            console.log('alio');
+//            return false;
+//        });
+
+    </script>
 @endsection

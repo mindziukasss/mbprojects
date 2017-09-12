@@ -1,10 +1,18 @@
-<?php namespace App\Http\Controllers;
+<?php
+namespace App\Http\Controllers;
 
-use App\Models\MBLanguage_codes;
+
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Mail;
+
+
+
 
 class FrontendController extends Controller
 {
+    use ValidatesRequests;
 
     /**
      * Display a listing of the resource.
@@ -87,6 +95,36 @@ class FrontendController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getContact()
+    {
+        return view('frontend.contact');
+    }
+    public function postContact(Request $request)
+
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'min:3',
+            'text' => 'min:10'
+        ]);
+
+        $data = array(
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'text' => $request->text
+        );
+        Mail::send('frontend.emails', $data, function ($message) use ($data) {
+            $message->from($data['email']);
+            $message->to('mindziukass@gmail.com');
+            $message->subject($data['subject']);
+            $message->subject($data['text']);
+
+        });
+        return redirect('/');
     }
 
 }
