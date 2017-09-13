@@ -18,4 +18,6 @@ return [
     'message' => 'Message',
     'send message' => 'Send Message',
     'Download cv' => 'Download cv',
+    'message sending' => 'Message sent. Thanks!',
+    'error message' => 'Error. Please try later',
     ];

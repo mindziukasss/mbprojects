@@ -117,7 +117,8 @@
                                               rows="5"></textarea>
                                     <span class="help-block"><p id="characterLeft" class="help-block "></p></span>
                                 </div>
-                                <button type="submit" name="submit"
+                                <div id="msg"></div>
+                                <button type="submit" name="submit" id="submit_mail"
                                         class="btn btn-primary pull-right">{{trans('app.send message')}}</button>
                             </form>
 
@@ -137,33 +138,30 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-//        $(document).ready(function () {
-//            $('#submit').click(function () {
-//                event.preventDefault();
-//                $.ajax({
-//                    type: 'POST',
-////                    url: '{language?}/contact',
-//                    url:'/contact',
-//                    data: $('#contact').serialize(),
-//                    beforeSend: function (xhr) {
-//                        $('#submit').html('SENDING....');
-//                    },
-//                    success: function (response) {
-//                        console.log('alio');
-//                    },
-//                    error: function () {
-//
-//                    },
-//                    complete: function () {
-//                        $('#submit').html('SEND MESSAGE.');
-//                    }
-//                });
-//            });
-//        });
-//        $('form.contact').on('#submit', function(){
-//            console.log('alio');
-//            return false;
-//        });
+        $(document).ready(function () {
+            $('#submit_mail').click(function () {
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/contact',
+                    data: $('#contact').serialize(),
+                    success: function (response) {
+                        if (response) {
+                            $('#msg').html('<div class="alert alert-success messages col-xs-6 col-md-4">{{trans('app.message sending')}}</div>');
+                            $('input , textarea').val(function () {
+                                return this.defaultValue;
+                            });
 
+                        } else {
+                            $('#msg').html('<div class="alert alert-danger messages col-xs-6 col-md-4">{{trans('app.error message')}}</div>');
+                        }
+                    },
+                    error: function () {
+                        $('#msg').html('<div class="alert alert-danger messages col-xs-6 col-md-4">{{trans('app.error message')}}</div>');
+                    }
+
+                });
+            });
+        });
     </script>
 @endsection

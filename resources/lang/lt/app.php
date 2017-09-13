@@ -36,7 +36,9 @@ return [
     'subject' => 'Antraštė',
     'message' => 'Žinutė',
     'send message' => 'Siusti žinutę',
-    'Download cv' => 'Atsisiųti cv'
+    'Download cv' => 'Atsisiųti cv',
+    'message sending'=> 'Žinutė išsiųsta. Ačiū!',
+    'error message' => 'Klaida. Bandykite vėliau.'
 
 
 ];
