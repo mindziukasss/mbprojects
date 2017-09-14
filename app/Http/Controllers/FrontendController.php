@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\MBWorks;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -23,8 +24,9 @@ class FrontendController extends Controller
      */
     public function index()
     {
-
-        return view('Frontend.info');
+        $config['works'] = MBWorks::get()->toArray();
+//        dd($config);
+        return view('Frontend.info',$config);
     }
 
     /**

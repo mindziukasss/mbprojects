@@ -43,39 +43,47 @@
             </div>
         </div>
         <div class="container">
-            <h1 id="portfolio">{{trans('app.portfolio')}}</h1>
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail" id="box">
-                        <img src="../image/gg.png">
-                        <div class="caption">
-                            <h3>Test site title</h3>
-                            <p class="more"><a href="#" class="btn btn-primary" role="button">{{trans('app.more')}}</a>
-                            </p>
+            @foreach($works[0] as $key => $value)
+                @if($key == 'translation')
+                    <h1 id="portfolio">{{trans('app.portfolio')}}</h1>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" id="box">
+                                <img src="../image/gg.png">
+                                <div class="caption">
+                                    <h3>{{$value['title']}}</h3>
+                                    <p class="more"><a href="#" class="btn btn-primary"
+                                                       role="button">{{trans('app.more')}}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="../image/gg.png">
+                                <div class="caption" id="box">
+                                    <h3>Test site title</h3>
+                                    <p class="more"><a href="#" class="btn btn-primary"
+                                                       role="button">{{trans('app.more')}}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" id="box">
+                                <img src="../image/gg.png">
+                                <div class="caption">
+                                    <h3>Test site title</h3>
+                                    <p class="more"><a href="#" class="btn btn-primary"
+                                                       role="button">{{trans('app.more')}}</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="../image/gg.png">
-                        <div class="caption" id="box">
-                            <h3>Test site title</h3>
-                            <p class="more"><a href="#" class="btn btn-primary" role="button">{{trans('app.more')}}</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail" id="box">
-                        <img src="../image/gg.png">
-                        <div class="caption">
-                            <h3>Test site title</h3>
-                            <p class="more"><a href="#" class="btn btn-primary" role="button">{{trans('app.more')}}</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+                @endif
+            @endforeach
         </div>
         <div class="container">
             <div class="row">
