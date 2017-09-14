@@ -11,9 +11,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#about">{{trans('app.about')}}</a></li>
-                <li><a href="#portfolio">{{trans('app.portfolio')}}</a></li>
-                <li><a  href="#contact">{{trans('app.contact')}}</a></li>
+                <li><a class="scrollable" href="#about">{{trans('app.about')}}</a></li>
+                <li><a class="scrollable" href="#portfolio">{{trans('app.portfolio')}}</a></li>
+                <li><a class="scrollable"  href="#contact">{{trans('app.contact')}}</a></li>
                 @foreach (getActiveLanguages() as $key => $value)
                     <li><a href="{{($key)}}">{{($key)}}</a></li>
                 @endforeach
