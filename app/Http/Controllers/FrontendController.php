@@ -25,7 +25,7 @@ class FrontendController extends Controller
     public function index()
     {
         $config['works'] = MBWorks::get()->toArray();
-//        dd($config);
+
         return view('Frontend.info',$config);
     }
 

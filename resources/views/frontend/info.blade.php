@@ -43,47 +43,38 @@
             </div>
         </div>
         <div class="container">
-            @foreach($works[0] as $key => $value)
-                @if($key == 'translation')
-                    <h1 id="portfolio">{{trans('app.portfolio')}}</h1>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail" id="box">
-                                <img src="../image/gg.png">
-                                <div class="caption">
-                                    <h3>{{$value['title']}}</h3>
-                                    <p class="more"><a href="#" class="btn btn-primary"
-                                                       role="button">{{trans('app.more')}}</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="../image/gg.png">
-                                <div class="caption" id="box">
-                                    <h3>Test site title</h3>
-                                    <p class="more"><a href="#" class="btn btn-primary"
-                                                       role="button">{{trans('app.more')}}</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail" id="box">
-                                <img src="../image/gg.png">
-                                <div class="caption">
-                                    <h3>Test site title</h3>
-                                    <p class="more"><a href="#" class="btn btn-primary"
-                                                       role="button">{{trans('app.more')}}</a>
-                                    </p>
-                                </div>
+            <h1 id="portfolio">{{trans('app.portfolio')}}</h1>
+            <div class="row">
+                @foreach($works as $data)
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail" id="box">
+                            @foreach($data as $key => $value)
+                                @if($key == 'resources_conn')
+                                    @foreach($value as $key => $file)
+                                        @foreach($file as $key => $path)
+                                            @if($key == 'files')
+                                                @foreach($path as $key => $value)
+                                                    <img src="{{asset($value['path'])}}">
+                                                @endforeach
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                @endif
+                            @endforeach
+                            <div class="caption">
+                                @foreach($data as $key => $value)
+                                    @if($key == 'translation' )
+                                        <h3>{{$value['title']}}</h3>
+                                        <p class="more"><a href="#" class="btn btn-primary"
+                                                           role="button">{{trans('app.more')}}</a>
+                                        </p>
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
-
-                @endif
-            @endforeach
+                @endforeach
+            </div>
         </div>
         <div class="container">
             <div class="row">
