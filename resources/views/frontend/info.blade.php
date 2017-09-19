@@ -45,19 +45,14 @@
         <div class="container">
             <h1 id="portfolio">{{trans('app.portfolio')}}</h1>
             <div class="row">
+                {{--{{dd($works)}}--}}
                 @foreach($works as $data)
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail" id="box">
                             @foreach($data as $key => $value)
                                 @if($key == 'resources_conn')
-                                    @foreach($value as $key => $file)
-                                        @foreach($file as $key => $path)
-                                            @if($key == 'files')
-                                                @foreach($path as $key => $value)
-                                                    <img src="{{asset($value['path'])}}">
-                                                @endforeach
-                                            @endif
-                                        @endforeach
+                                    @foreach($value[0]['files'] as $key => $value)
+                                        <img src="{{asset($value['path'])}}">
                                     @endforeach
                                 @endif
                             @endforeach
