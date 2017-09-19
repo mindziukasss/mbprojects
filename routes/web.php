@@ -60,3 +60,7 @@ Route::post('contact','FrontendController@postContact');
 Route::group(['prefix' => '{language?}', 'middleware' => 'check-language'], function () {
     Route::get('/', ['as'=> 'app.frontend.index', 'uses'  => 'FrontendController@index']);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
