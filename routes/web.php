@@ -11,14 +11,11 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-Auth::routes();
+Route::get('login/admin/mbsuperadmin30', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+Route::post('login/admin/mbsuperadmin30', ['as' => '','uses' => 'Auth\LoginController@login']);
+Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin/mbsuperadmin30', 'middleware' => ['auth']], function () {
     Route::get('/', function () {
         return view('admin.core');
     });
