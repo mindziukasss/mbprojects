@@ -45,14 +45,14 @@
         <div class="container">
             <h1 id="portfolio">{{trans('app.portfolio')}}</h1>
             <div class="row">
-                {{--{{dd($works)}}--}}
                 @foreach($works as $data)
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail" id="box">
                             @foreach($data as $key => $value)
                                 @if($key == 'resources_conn')
                                     @foreach($value[0]['files'] as $key => $value)
-                                        <img src="{{asset($value['path'])}}">
+                                        <a href="{{route('app.frontend.show', [app()->getLocale(), $data['id']])}}"><img
+                                                    src="{{asset($value['path'])}}"></a>
                                     @endforeach
                                 @endif
                             @endforeach
@@ -60,9 +60,11 @@
                                 @foreach($data as $key => $value)
                                     @if($key == 'translation' )
                                         <h3>{{$value['title']}}</h3>
-                                        <p class="more"><a href="#" class="btn btn-primary"
-                                                           role="button">{{trans('app.more')}}</a>
-                                        </p>
+                                        <p class="more"><a
+                                                    href="{{route('app.frontend.show', [app()->getLocale(), $data['id']])}}"
+                                                    class="btn btn-primary"
+                                                    role="button">{{trans('app.more')}}</a>
+
                                     @endif
                                 @endforeach
                             </div>
