@@ -52,14 +52,14 @@
                                 @if($key == 'resources_conn')
                                     @foreach($value[0]['files'] as $key => $value)
                                         <a href="{{route('app.frontend.show', [app()->getLocale(), $data['id']])}}"><img
-                                                    src="{{asset($value['path'])}}"></a>
+                                                    src="{{asset($value['path'])}}" class="img-rounded zoom" alt="Cinque Terre" width="100%"></a>
                                     @endforeach
                                 @endif
                             @endforeach
                             <div class="caption">
                                 @foreach($data as $key => $value)
                                     @if($key == 'translation' )
-                                        <h3>{{$value['title']}}</h3>
+                                        <h3>&nbsp;{{$value['title']}}</h3>
                                         <p class="more"><a
                                                     href="{{route('app.frontend.show', [app()->getLocale(), $data['id']])}}"
                                                     class="btn btn-primary"

@@ -13,6 +13,7 @@ return [
     'show' => "Rodyti",
     'edit' => "Keisti",
     'delete' => "Trinti",
+    'back' => 'Atgal',
 
     'translation' => 'Vertimas',
 
@@ -38,7 +39,8 @@ return [
     'send message' => 'Siusti žinutę',
     'Download cv' => 'Atsisiųti cv',
     'message sending'=> 'Žinutė išsiųsta. Ačiū!',
-    'error message' => 'Klaida. Bandykite vėliau.'
+    'error message' => 'Klaida. Bandykite vėliau.',
+    'description' => 'Aprašymas',
 
 
 ];

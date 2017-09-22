@@ -1,14 +1,14 @@
 <?php
+
 namespace App\Http\Controllers;
 
 
+use App\Models\MBLanguage_codes;
 use App\Models\MBWorks;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Mail;
-
-
 
 
 class FrontendController extends Controller
@@ -26,7 +26,7 @@ class FrontendController extends Controller
     {
         $config['works'] = MBWorks::get()->toArray();
 
-        return view('Frontend.info',$config);
+        return view('Frontend.info', $config);
     }
 
     /**
@@ -57,10 +57,19 @@ class FrontendController extends Controller
      *
      * @param  int $id
      * @return Response
+     *
      */
-    public function show($id)
+
+    public function show($language, $id)
     {
-        //
+        $data = MBWorks::find($id)->toArray();
+        $config['title'] = $data['translation']['title'];
+        $config['description'] = $data['translation']['description'];
+        $config['url'] = $data['url'];
+        $config['path'] = $data['resources_conn'];
+        $config['back'] = "/#portfolio";
+
+        return view('frontend.work', $config);
     }
 
     /**

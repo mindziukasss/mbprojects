@@ -20,4 +20,6 @@ return [
     'Download cv' => 'Download cv',
     'message sending' => 'Message sent. Thanks!',
     'error message' => 'Error. Please try later',
+    'description' => 'Description',
+    'back' => 'Back',
     ];
