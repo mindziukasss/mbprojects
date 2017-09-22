@@ -117,7 +117,7 @@ class MBWorksController extends Controller {
             'record_id' => $id,
             'language_code' => $data['language_code']
         ], $data);
-        
+
         return redirect(route('app.works.index'));
 
 	}

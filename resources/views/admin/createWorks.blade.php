@@ -1,14 +1,12 @@
 @extends('admin.core')
 @section('content')
-
     <div class="container">
         <div class="row">
-
             {!! Form::open(['url' =>  $route, 'method' => 'post'])!!}
             @if(isset($record['id']))
                 <h2>{{$titleForm}}</h2>
                 {{Form::label('language_code', 'Select language')}}
-                {{Form::select('language_code', $lang, $record['language_code'], ['class' => 'form-control'])}}
+                {{Form::select('language_code', $lang,$record['language_code'], ['class' => 'form-control'])}}
 
                 {{Form::label('title', 'Title')}}
                 {{Form::text('title',$record['title'],['class' => 'form-control'])}}
@@ -18,7 +16,6 @@
 
                 {{Form::label('url', 'Url')}}
                 {{Form::text('url', $record['url'],['class' => 'form-control'])}}
-
             @else
                 <h2>{{$titleForm}}</h2>
                 {{Form::label('language_code', 'Select language')}}
