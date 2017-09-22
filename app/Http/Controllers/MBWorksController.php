@@ -1,5 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
 
+namespace App\Http\Controllers;
 
 use App\Models\MBWorks;
 use App\Models\MBWorks_translations;
@@ -39,7 +40,7 @@ class MBWorksController extends Controller {
 	    $config['lang'] = getActiveLanguages();
 	    $config['titleForm'] = 'Create projects';
         $config['route'] = route('app.works.create');
-        $config['back'] = '/works';
+        $config['back'] = route('app.works.index');
 		return view('admin.createWorks', $config);
 	}
 
@@ -91,9 +92,11 @@ class MBWorksController extends Controller {
         $record['description'] = $record['translation']['description'];
         $record['language_code'] = $record['translation']['language_code'];
         $config['record'] = $record;
+        $config['lang'] = getActiveLanguages();
         $config['titleForm'] = 'Edit projects';
         $config['route'] = route('app.works.edit', $id);
         $config['back'] = route('app.works.index');
+
         return view('admin.createWorks', $config);
 	}
 
@@ -114,6 +117,7 @@ class MBWorksController extends Controller {
             'record_id' => $id,
             'language_code' => $data['language_code']
         ], $data);
+        
         return redirect(route('app.works.index'));
 
 	}
