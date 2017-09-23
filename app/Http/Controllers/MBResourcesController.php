@@ -33,7 +33,7 @@ class MBResourcesController extends Controller
      */
     public function index()
     {
-        $config['tableName'] = 'Resources list';
+        $config['tableName'] = trans('app.Resources list');
         $config['ignore'] = ['id', 'count', 'created_at', 'updated_at', 'deleted_at'];
         $config['list'] = MBResources::get()->toArray();
         $config['delete'] = 'app.resources.destroy';

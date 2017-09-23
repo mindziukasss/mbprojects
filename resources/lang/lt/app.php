@@ -5,6 +5,19 @@ return [
     'language_code' => 'Kalbos kodas',
     'name' => 'Pavadinimas',
     'is_active' => 'Išjungti/Įjungti',
+    'resources_conn' => 'Skč.',
+    'mime_type' => 'Tipas',
+    'path' => 'Nuoroda',
+    'widht'=> 'Plotis',
+    'size' => 'Dydis',
+    'height' => 'Aukštis',
+    'Projects list' => 'Projektų sąrašas',
+    'Language list' => 'Kalbų sąrašas',
+    'Resources list' => 'Resursų sąrašas',
+    'projects' => 'Projektai',
+    'languages' => 'Kalbos',
+    'resources' => 'Resursai',
+    'statistics' => 'Statistika',
 
 
     'no_data' => "Nėra duomenų",
@@ -14,6 +27,7 @@ return [
     'edit' => "Keisti",
     'delete' => "Trinti",
     'back' => 'Atgal',
+    'save' => 'Saugoti',
 
     'translation' => 'Vertimas',
 

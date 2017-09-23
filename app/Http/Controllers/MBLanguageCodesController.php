@@ -13,7 +13,7 @@ class MBLanguageCodesController extends Controller {
 	 */
 	public function index()
 	{
-        $config['tableName'] = 'Language list';
+        $config['tableName'] = trans('app.Language list');
         $config['ignore'] = ['id', 'count', 'created_at'];
         $config['callToAction']= 'app.languages.edit';
         $config['list'] = MBLanguage_codes::get()->toArray();

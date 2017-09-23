@@ -31,8 +31,8 @@
                 {{Form::text('url', null,['class' => 'form-control'])}}
             @endif
             <br>
-            <a class="btn btn-primary" href="{{$back}}">Back</a>
-            {{Form::submit(trans('Save'), array('class' => 'btn btn-success')) }}
+            <a class="btn btn-primary" href="{{$back}}">{{ trans('app.back') }}</a>
+            {{Form::submit(trans('app.save'), array('class' => 'btn btn-success')) }}
 
             {!! Form::close() !!}
         </div>

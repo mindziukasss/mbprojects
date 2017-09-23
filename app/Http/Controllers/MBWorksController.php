@@ -17,7 +17,7 @@ class MBWorksController extends Controller {
 	 */
 	public function index()
 	{
-        $config['tableName'] = 'Projects list';
+        $config['tableName'] = trans('app.Projects list');
         $config['ignore'] = ['id', 'count', 'created_at', 'updated_at', 'deleted_at'];
         $config['list'] = MBWorks::get()->toArray();
         $config['route'] = route('app.works.create');
