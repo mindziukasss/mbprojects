@@ -7,6 +7,7 @@
                 <p class="slide">{{trans('app.you can view all my new works on this site')}}</p>
             </div>
         </div>
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-4">
@@ -66,10 +67,9 @@
                                 @foreach($data as $key => $value)
                                     @if($key == 'translation' )
                                         <h3>&nbsp;{{$value['title']}}</h3>
-                                        <p class="more"><a
-                                                    href="{{route('app.frontend.show', [app()->getLocale(), $data['id']])}}"
-                                                    class="btn btn-primary"
-                                                    role="button">{{trans('app.more')}}</a>
+                                        <a href="{{route('app.frontend.show', [app()->getLocale(), $data['id']])}}"
+                                           class="btn btn-primary pull-right"
+                                           role="button">{{trans('app.more')}}</a>
 
                                     @endif
                                 @endforeach
