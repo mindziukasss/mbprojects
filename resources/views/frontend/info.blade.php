@@ -3,8 +3,8 @@
     <div class="row">
         <div class="jumbotron" id="jumb">
             <div class="container" id="text">
-                <h1 class="slide">{{trans('app.welcome to my portfolio site')}}</h1>
-                <p class="slide">{{trans('app.you can view all my recent work on this site')}}</p>
+                <h1 class="slide">{{trans('app.welcome to my portfolio')}}</h1>
+                <p class="slide">{{trans('app.you can view all my new works on this site')}}</p>
             </div>
         </div>
         <div class="container">
@@ -49,11 +49,17 @@
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail" id="box">
                             @foreach($data as $key => $value)
-                                @if($key == 'resources_conn')
-                                    @foreach($value[0]['files'] as $key => $value)
-                                        <a href="{{route('app.frontend.show', [app()->getLocale(), $data['id']])}}"><img
-                                                    src="{{asset($value['path'])}}" class="img-rounded zoom" alt="Cinque Terre" width="100%"></a>
-                                    @endforeach
+                                @if($key == 'resources_conn' )
+                                    @if(isset($value[0]['files']))
+                                        @foreach($value[0]['files'] as $key => $value)
+                                            <a href="{{route('app.frontend.show', [app()->getLocale(), $data['id']])}}"><img
+                                                        src="{{asset($value['path'])}}" class="img-rounded zoom"
+                                                        alt="Cinque Terre" width="100%"></a>
+                                        @endforeach
+                                    @else
+                                        <img src="../image/no-image.jpg" class="img-rounded zoom" alt="Cinque Terre"
+                                             width="78%">
+                                    @endif
                                 @endif
                             @endforeach
                             <div class="caption">
