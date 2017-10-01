@@ -15,12 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        dd(base_path('App/Http/helpers.php')); check urls helpers
-        require base_path('App/Http/languageHelpers.php');
-        if(request()->segment(1) !== 'admin' )
-        {
-            View::share('lang', getActiveLanguages());
-        }
+        //
 
     }
 

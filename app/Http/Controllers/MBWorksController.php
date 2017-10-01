@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Helper;
 use App\Models\MBWorks;
 use App\Models\MBWorks_translations;
 use App\Models\MBWorksResourcesConnections;
@@ -37,7 +38,8 @@ class MBWorksController extends Controller {
 	 */
 	public function create()
 	{
-	    $config['lang'] = getActiveLanguages();
+        $lang = new Helper();
+        $config['lang'] = $lang->getActiveLanguages();
 	    $config['titleForm'] = 'Create projects';
         $config['route'] = route('app.works.create');
         $config['back'] = route('app.works.index');
@@ -87,12 +89,13 @@ class MBWorksController extends Controller {
 	 */
 	public function edit($id)
 	{
+        $lang = new Helper();
+        $config['lang'] = $lang->getActiveLanguages();
         $record = MBWorks::find($id)->toArray();
         $record['title'] = $record['translation']['title'];
         $record['description'] = $record['translation']['description'];
         $record['language_code'] = $record['translation']['language_code'];
         $config['record'] = $record;
-        $config['lang'] = getActiveLanguages();
         $config['titleForm'] = 'Edit projects';
         $config['route'] = route('app.works.edit', $id);
         $config['back'] = route('app.works.index');

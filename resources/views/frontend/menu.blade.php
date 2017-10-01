@@ -14,7 +14,7 @@
                 <li><a class="scrollable" href="#about">{{trans('app.about')}}</a></li>
                 <li><a class="scrollable" href="#portfolio">{{trans('app.portfolio')}}</a></li>
                 <li><a class="scrollable"  href="#contact">{{trans('app.contact')}}</a></li>
-                @foreach (getActiveLanguages() as $key => $value)
+                @foreach (App\Models\Helper::getActiveLanguages() as $key => $value)
                     <li><a href="{{($key)}}">{{($key)}}</a></li>
                 @endforeach
             </ul>

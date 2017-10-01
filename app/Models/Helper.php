@@ -1,14 +1,13 @@
 <?php
 
 
-use App\Models\MBLanguage_codes;
-use Illuminate\Support\Facades\Schema;
+namespace App\Models;
 
-function getActiveLanguages()
+
+class Helper extends CoreModel
 {
-    if (is_null(Schema::hasTable('mb_language_codes'))) {
-        return "DB is empty";
-    } else {
+    public static function getActiveLanguages($languagesLocale = null)
+    {
         $languages = MBLanguage_codes::where('is_active', 1)->get()->pluck('name', 'id')->toArray();
         $locale = app()->getLocale();
 
