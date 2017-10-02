@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/admin">Mindaugas Benotas</a>
+            <a class="navbar-brand" href="/admin/mbsuperadmin30">Mindaugas Benotas</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
